@@ -1,1 +1,312 @@
-nothing
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SketchCode - Code by Sonu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Rounded" rel="stylesheet">
+    <style>
+        :root {
+            --md-sys-color-primary: #6750A4;
+            --md-sys-color-on-primary: #FFFFFF;
+            --md-sys-color-surface: #FEF7FF;
+            --md-sys-color-on-surface: #1D1B20;
+            --md-sys-color-surface-variant: #E7E0EB;
+            --md-sys-color-on-surface-variant: #49454F;
+            --md-sys-color-outline: #79747E;
+            --md-sys-color-secondary-container: #E8DEF8;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 600px; /* Play Store style mobile-first view */
+            background: #fff;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        /* Top Bar */
+        .top-app-bar {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            gap: 16px;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        .app-title-section h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: #202124;
+        }
+
+        .dev-name {
+            color: var(--md-sys-color-primary);
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            margin-top: 4px;
+            font-size: 14px;
+        }
+
+        .category-tags {
+            margin-top: 8px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .tag {
+            background: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-surface-variant);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Action Buttons */
+        .action-area {
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-download {
+            flex: 1;
+            background: var(--md-sys-color-primary);
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 100px;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* App Stats */
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--md-sys-color-surface-variant);
+            margin: 0 16px;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        /* Screenshots Slider */
+        .screenshot-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding: 16px;
+            scroll-behavior: smooth;
+        }
+
+        .screenshot-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .screenshot-container img {
+            height: 320px;
+            border-radius: 12px;
+            border: 1px solid var(--md-sys-color-surface-variant);
+        }
+
+        /* About Section */
+        .content-section {
+            padding: 16px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .about-text {
+            font-size: 14px;
+            color: var(--md-sys-color-on-surface-variant);
+            line-height: 1.5;
+        }
+
+        /* Developer Card */
+        .dev-card {
+            margin: 16px;
+            padding: 16px;
+            background: var(--md-sys-color-surface-variant);
+            border-radius: 16px;
+        }
+
+        .dev-info-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .dev-info-row i {
+            color: var(--md-sys-color-primary);
+        }
+
+        /* Footer Links for Razorpay */
+        .footer-legal {
+            padding: 24px 16px;
+            border-top: 1px solid var(--md-sys-color-surface-variant);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            font-size: 12px;
+            color: var(--md-sys-color-on-surface-variant);
+            text-decoration: none;
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: var(--md-sys-color-outline);
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="top-app-bar">
+        <img src="https://raw.githubusercontent.com/codebysonu95-rgb/SketchCode/main/Website/icon.png" class="app-icon" alt="SketchCode Icon">
+        <div class="app-title-section">
+            <h1>SketchCode</h1>
+            <a href="#" class="dev-name">Code by Sonu</a>
+            <div class="category-tags">
+                <span class="tag">Education</span>
+                <span class="tag">Tools</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-area">
+        <a href="#" class="btn-download">Install / Download App</a>
+    </div>
+
+    <div class="stats-row">
+        <div class="stat-item">
+            <div class="stat-value">4.9 <i class="material-icons-rounded" style="font-size: 14px;">star</i></div>
+            <div class="stat-label">10K+ reviews</div>
+        </div>
+        <div class="stat-item" style="border-left: 1px solid #ddd; border-right: 1px solid #ddd;">
+            <div class="stat-value">12 MB</div>
+            <div class="stat-label">Size</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">3+</div>
+            <div class="stat-label">Rated for 3+</div>
+        </div>
+        <div class="stat-item" style="border-left: 1px solid #ddd;">
+            <div class="stat-value">50K+</div>
+            <div class="stat-label">Downloads</div>
+        </div>
+    </div>
+
+    <div class="screenshot-container">
+        <img src="https://raw.githubusercontent.com/codebysonu95-rgb/SketchCode/main/Website/screenshots1.jpg" alt="Screen 1">
+        <img src="https://raw.githubusercontent.com/codebysonu95-rgb/SketchCode/main/Website/screenshots2.jpg" alt="Screen 2">
+        <img src="https://raw.githubusercontent.com/codebysonu95-rgb/SketchCode/main/Website/screenshots3.jpg" alt="Screen 3">
+        <img src="https://raw.githubusercontent.com/codebysonu95-rgb/SketchCode/main/Website/screenshots4.jpg" alt="Screen 4">
+        <img src="https://raw.githubusercontent.com/codebysonu95-rgb/SketchCode/main/Website/screenshots5.jpg" alt="Screen 5">
+    </div>
+
+    <div class="content-section">
+        <div class="section-header">
+            <h2>About this app</h2>
+            <i class="material-icons-rounded">arrow_forward</i>
+        </div>
+        <p class="about-text">
+            <b>SketchCode</b> ek premium platform hai jahan Sketchware Pro developers apne projects aur source code share kar sakte hain. Is app mein aapko encrypted SWB files, advanced UI designs, aur Firebase integrations milte hain. <br><br>
+            Chahe aap beginner hon ya expert, SketchCode aapki app development journey ko fast aur easy banata hai. Download karein aur Code by Sonu ke premium projects explore karein.
+        </p>
+    </div>
+
+    <div class="content-section">
+        <div class="section-header">
+            <h2>Developer contact</h2>
+        </div>
+        <div class="dev-card">
+            <div class="dev-info-row">
+                <i class="material-icons-rounded">language</i>
+                <span>https://github.com/codebysonu95-rgb</span>
+            </div>
+            <div class="dev-info-row">
+                <i class="material-icons-rounded">email</i>
+                <span>sonu.developer@example.com</span>
+            </div>
+            <div class="dev-info-row">
+                <i class="material-icons-rounded">location_on</i>
+                <span>Surat, Gujarat, India</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-legal">
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Refund & Cancellation Policy</a>
+            <a href="#">Shipping & Delivery</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <p class="copyright">© 2026 Code by Sonu | SketchCode Store</p>
+    </footer>
+</div>
+
+</body>
+</html>
