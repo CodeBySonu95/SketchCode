@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - SketchCode</title>
-    <!-- Google Fonts: Roboto & Material Symbols Rounded -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     
@@ -18,7 +17,6 @@
             --md-sys-color-surface-variant: #E7E0EB;
         }
 
-        /* Material Symbols Styling */
         .material-symbols-rounded {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             display: inline-block;
@@ -54,7 +52,12 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            padding: 8px 0;
+            z-index: 10;
         }
 
         .back-btn {
@@ -66,23 +69,17 @@
             width: 40px;
             height: 40px;
             border-radius: 20px;
-            transition: background 0.2s;
         }
 
-        .back-btn:active {
-            background-color: var(--md-sys-color-surface-variant);
-        }
+        .back-btn:active { background-color: var(--md-sys-color-surface-variant); }
 
         h1 {
-            font-size: 24px;
+            font-size: 22px;
             margin: 0;
             font-weight: 500;
-            color: var(--md-sys-color-on-surface);
         }
 
-        section {
-            margin-bottom: 24px;
-        }
+        section { margin-bottom: 24px; }
 
         h2 {
             font-size: 16px;
@@ -99,20 +96,43 @@
             margin: 8px 0;
         }
 
-        ul {
-            padding-left: 20px;
-        }
+        ul { padding-left: 20px; }
 
         .contact-box {
             background: var(--md-sys-color-surface-variant);
             padding: 16px;
             border-radius: 16px;
-            margin-top: 20px;
+            margin-top: 10px;
+        }
+
+        .security-note {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--md-sys-color-outline);
+            margin-top: 12px;
+        }
+
+        /* Footer Navigation */
+        .footer-nav {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--md-sys-color-surface-variant);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: var(--md-sys-color-primary);
+            font-size: 14px;
+            font-weight: 500;
         }
 
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 30px;
             font-size: 12px;
             color: var(--md-sys-color-outline);
             padding-bottom: 24px;
@@ -131,55 +151,75 @@
 
     <section>
         <p><b>Last Updated:</b> January 13, 2026</p>
-        <p>At <b>SketchCode</b>, accessible from our application, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by SketchCode and how we use it.</p>
+        <p>At <b>SketchCode</b>, your privacy is our top priority. This policy outlines the types of information we collect and how we ensure its protection while providing you with high-quality source codes and developer tools.</p>
     </section>
 
     <section>
         <h2>1. Information We Collect</h2>
-        <p>When you use SketchCode, we may collect the following information:</p>
         <ul>
-            <li><b>Account Information:</b> Name and Email address provided via Google Sign-in.</li>
-            <li><b>Device Information:</b> Device model, OS version, and unique identifiers to ensure app security.</li>
-            <li><b>Usage Data:</b> Information on how you interact with our services to improve app performance.</li>
+            <li><b>Account Information:</b> Name and Email address provided via Google Sign-in to personalize your experience.</li>
+            <li><b>Device Information:</b> Device model, OS version, and non-personal identifiers used strictly for analytics and security purposes.</li>
+            <li><b>Usage Data:</b> Interaction logs to help us improve app performance and user experience.</li>
         </ul>
     </section>
 
     <section>
         <h2>2. How We Use Your Information</h2>
-        <p>We use the collected information in the following ways:</p>
         <ul>
-            <li>To provide, operate, and maintain our application.</li>
-            <li>To <b>improve, personalize, and expand</b> our app features.</li>
-            <li>To understand and analyze how you use our app.</li>
-            <li>To <b>enhance security</b> and prevent fraudulent activities or unauthorized access.</li>
-            <li>To process your transactions via Razorpay.</li>
+            <li>To provide, operate, and maintain the SketchCode Store.</li>
+            <li>To <b>personalize and expand</b> our platform's features based on user needs.</li>
+            <li>To <b>enhance security</b> and monitor for fraudulent activities or unauthorized access.</li>
+            <li>To process your transactions securely via Razorpay.</li>
+            <li>For app maintenance, analytics, and security monitoring.</li>
         </ul>
     </section>
 
     <section>
         <h2>3. Data Protection & Sharing</h2>
-        <p>We take your privacy seriously. <b>We do not share, sell, rent, or distribute your personal data</b> to any third-party companies or individuals, except as required to provide our services (e.g., payment processing via Razorpay).</p>
-        <p>Your data is stored securely using Firebase and is only accessed when necessary for app maintenance or security audits.</p>
+        <p>We do not sell or rent your personal data. Information is shared only with trusted third-party services strictly required to operate the app, such as payment processing and authentication.</p>
+        <p>Your data is stored securely using Google Firebase infrastructure. While we use industry-standard security measures, please note that no method of transmission or storage is 100% secure.</p>
     </section>
 
     <section>
         <h2>4. Third-Party Services</h2>
-        <p>SketchCode uses third-party services that may collect information used to identify you:</p>
+        <p>Our app utilizes the following services to ensure smooth operation:</p>
         <ul>
             <li>Google Play Services (Authentication)</li>
-            <li>Firebase (Database & Storage)</li>
-            <li>Razorpay (Payment Gateway)</li>
+            <li>Firebase (Real-time Database & Storage)</li>
+            <li>Razorpay (Secure Payment Gateway)</li>
         </ul>
     </section>
 
     <section>
-        <h2>5. Contact Us</h2>
+        <h2>5. User Control & Data Deletion</h2>
+        <p>We believe in giving users full control over their data:</p>
+        <ul>
+            <li>Users may request account or data deletion at any time.</li>
+            <li>To request deletion, please contact us via our official email provided below.</li>
+            <li>Requests will be processed in accordance with applicable laws and platform policies.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>6. Children's Privacy</h2>
+        <p>SketchCode does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our app, we strongly encourage you to contact us immediately to remove such data.</p>
+    </section>
+
+    <section>
+        <h2>7. Contact Us</h2>
         <div class="contact-box">
-            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us:</p>
-            <p><b>Email:</b> codebysonu95@gmail.com</p>
+            <p>For questions, data deletion requests, or suggestions, please contact us:</p>
+            <p><b>Email:</b> <a href="mailto:codebysonu95@gmail.com" style="color:var(--md-sys-color-primary); text-decoration:none;">codebysonu95@gmail.com</a></p>
             <p><b>Developer:</b> Code by Sonu</p>
         </div>
     </section>
+
+    <div class="footer-nav">
+        <a href="index.html" class="footer-link">Download App</a>
+        <a href="condition.html" class="footer-link">Terms & Conditions</a>
+        <a href="refund.html" class="footer-link">Refund & Cancellation Policy</a>
+        <a href="mailto:codebysonu95@gmail.com" class="footer-link">Contact Support</a>
+    </div>
 
     <footer>
         © 2026 SketchCode | All Rights Reserved.
@@ -188,4 +228,3 @@
 
 </body>
 </html>
-
