@@ -97,7 +97,7 @@
             display: inline-block;
         }
 
-        /* Stats Row (Now Above Buttons) */
+        /* Stats Row */
         .stats-row {
             display: flex;
             justify-content: space-around;
@@ -127,7 +127,7 @@
             color: var(--md-sys-color-on-surface-variant);
         }
 
-        /* Action Buttons (Now Below Stats) */
+        /* Action Buttons */
         .action-area {
             padding: 0 16px 16px 16px;
             display: flex;
@@ -162,7 +162,7 @@
             gap: 8px;
         }
 
-        /* Screenshots Slider (All 5 Included) */
+        /* Screenshots Slider */
         .screenshot-container {
             display: flex;
             overflow-x: auto;
@@ -209,6 +209,7 @@
             align-items: center;
             gap: 16px;
             margin-bottom: 16px;
+            cursor: pointer; /* Clickable look */
         }
 
         .dev-info-row:last-child { margin-bottom: 0; }
@@ -254,9 +255,9 @@
 
 <div class="main-container">
     <div class="toolbar">
-        <span class="material-icons-outlined">arrow_back</span>
+        <span class="material-icons-outlined" onclick="window.history.back()" style="cursor:pointer;">arrow_back</span>
         <h1 class="toolbar-title">App Details</h1>
-        <span class="material-icons-outlined">share</span>
+        <span class="material-icons-outlined" id="shareBtn" style="cursor:pointer;">share</span>
     </div>
 
     <div class="top-app-bar">
@@ -323,7 +324,7 @@
                     <span class="info-value">English</span>
                 </div>
             </div>
-            <div class="dev-info-row">
+            <div class="dev-info-row" onclick="window.location.href='mailto:codebysonu95@gmail.com'">
                 <span class="material-icons-outlined">email</span>
                 <div class="dev-info-text">
                     <span class="info-label">Email</span>
@@ -350,6 +351,34 @@
         <p class="copyright">© 2026 CodeBySonu | SketchCode Store</p>
     </footer>
 </div>
+
+<script>
+    const shareBtn = document.getElementById('shareBtn');
+    
+    shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'SketchCode - Code by Sonu',
+                    text: 'Download SketchCode Store and explore high-quality Sketchware projects!',
+                    url: window.location.href
+                });
+                console.log('Successfully shared');
+            } catch (error) {
+                console.log('Error sharing:', error);
+            }
+        } else {
+            // Fallback: Copy to clipboard if Web Share API is not supported
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            alert('Link copied to clipboard!');
+        }
+    });
+</script>
 
 </body>
 </html>
