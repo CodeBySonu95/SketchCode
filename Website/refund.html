@@ -15,9 +15,9 @@
             --md-sys-color-on-surface-variant: #49454F;
             --md-sys-color-outline: #79747E;
             --md-sys-color-surface-variant: #E7E0EB;
+            --md-sys-color-error: #B3261E;
         }
 
-        /* Material Symbols Styling */
         .material-symbols-rounded {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             display: inline-block;
@@ -53,7 +53,12 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            padding: 8px 0;
+            z-index: 10;
         }
 
         .back-btn {
@@ -65,23 +70,17 @@
             width: 40px;
             height: 40px;
             border-radius: 20px;
-            transition: background 0.2s;
         }
 
-        .back-btn:active {
-            background-color: var(--md-sys-color-surface-variant);
-        }
+        .back-btn:active { background-color: var(--md-sys-color-surface-variant); }
 
         h1 {
-            font-size: 24px;
+            font-size: 22px;
             margin: 0;
             font-weight: 500;
-            color: var(--md-sys-color-on-surface);
         }
 
-        section {
-            margin-bottom: 24px;
-        }
+        section { margin-bottom: 24px; }
 
         h2 {
             font-size: 16px;
@@ -98,24 +97,57 @@
             margin: 8px 0;
         }
 
-        ul {
-            padding-left: 20px;
-        }
+        ul { padding-left: 20px; }
 
         .contact-box {
             background: var(--md-sys-color-surface-variant);
             padding: 16px;
             border-radius: 16px;
-            margin-top: 20px;
+            margin-top: 10px;
+        }
+
+        .warning-box {
+            background-color: #fff0f0;
+            border: 1px solid #ffcdd2;
+            padding: 16px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: var(--md-sys-color-error);
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        /* Footer Navigation */
+        .footer-nav {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--md-sys-color-surface-variant);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: var(--md-sys-color-primary);
+            font-size: 14px;
+            font-weight: 500;
         }
 
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 30px;
             font-size: 12px;
             color: var(--md-sys-color-outline);
             padding-bottom: 24px;
         }
+
+        .bold { font-weight: 700; color: var(--md-sys-color-on-surface); }
     </style>
 </head>
 <body>
@@ -125,47 +157,68 @@
         <a href="index.html" class="back-btn">
             <span class="material-symbols-rounded">arrow_back</span>
         </a>
-        <h1>Refund Policy</h1>
+        <h1>Refund & Cancellation</h1>
     </div>
 
     <section>
         <p><b>Last Updated:</b> January 13, 2026</p>
-        <p>Thank you for choosing <b>SketchCode</b>. We strive to provide the best high-quality source codes and projects for our developers. Please read our refund and cancellation policy carefully before making a purchase.</p>
+        <p>Thank you for choosing <b>SketchCode</b>. As we deal in digital assets, we have established the following policy to ensure a fair transaction process for both publishers and buyers.</p>
     </section>
 
     <section>
         <h2>1. Digital Products Policy</h2>
-        <p>Since <b>SketchCode</b> offers non-tangible, irrevocable goods (digital source codes), <b>we do not issue refunds</b> once the order is confirmed and the product is downloaded or accessed. As a customer, you are responsible for understanding this upon purchasing any item on our platform.</p>
+        <p>Since <b>SketchCode</b> offers non-tangible, irrevocable digital goods, <span class="bold">we do not issue refunds once the order is confirmed and access to the digital product has been granted.</span> By completing a purchase, you acknowledge that the digital nature of the product prevents any return or reversal of the delivery.</p>
     </section>
 
     <section>
         <h2>2. Exceptional Circumstances</h2>
-        <p>Although we have a no-refund policy, we may consider refund requests under the following exceptional conditions:</p>
+        <p>Refund requests are only considered under the following specific conditions:</p>
         <ul>
-            <li><b>Double Payment:</b> If you were charged twice for the same product due to a technical glitch.</li>
-            <li><b>Major Defects:</b> If the source code is completely broken or not as described, and our support team is unable to fix it within 7 days.</li>
-            <li><b>Non-Delivery:</b> If you did not receive the download link/access due to a server issue.</li>
+            <li><b>Double Payment:</b> Confirmed multiple charges for the same item due to a technical error.</li>
+            <li><b>Critical Defects:</b> If the source code is fundamentally broken or does not match the description, and our team cannot resolve it within 7 days.</li>
+            <li><span class="bold">Clarification:</span> Minor bugs, version incompatibilities (Sketchware Pro versions), or user-specific environment issues do not qualify as major defects.</li>
         </ul>
     </section>
 
     <section>
-        <h2>3. Cancellation Policy</h2>
-        <p>Orders once placed and processed cannot be cancelled as the delivery of digital content is instantaneous. However, if a subscription model is introduced in the future, users will be able to cancel their upcoming renewals at any time.</p>
+        <h2>3. Regional Availability & Credits</h2>
+        <p>Currently, credit purchases and withdrawals are supported <span class="bold">only for users located in India</span>.</p>
+        <ul>
+            <li>International payments and withdrawals are not available at this time.</li>
+            <li>Any attempt to bypass regional restrictions via VPN or other methods may lead to account suspension.</li>
+            <li>International support may be introduced in the future at our sole discretion.</li>
+        </ul>
     </section>
 
     <section>
-        <h2>4. Refund Process</h2>
-        <p>If your request falls under the exceptional circumstances mentioned above, please contact us within <b>48 hours</b> of purchase. Approved refunds will be processed via <b>Razorpay</b> and will be credited to the original payment method within 5-7 working days.</p>
+        <h2>4. Cancellation Policy</h2>
+        <p>Due to the instantaneous delivery of digital content and project files, orders cannot be cancelled once the transaction is processed through the payment gateway.</p>
+    </section>
+
+    <div class="warning-box">
+        <p>⚠️ <b>Final Decision Right:</b> SketchCode reserves the final and discretionary right to approve or reject any refund request based on internal verification, access logs, and policy compliance.</p>
+    </div>
+
+    <section>
+        <h2>6. Refund Process</h2>
+        <p>Requests must be submitted via email within <b>48 hours</b> of the transaction. Approved refunds will be credited back to the original payment source within 5-7 business days via Razorpay.</p>
     </section>
 
     <section>
-        <h2>5. Support & Contact</h2>
+        <h2>7. Support & Contact</h2>
         <div class="contact-box">
-            <p>If you have any issues with your purchase or need help with a project, please reach out to us:</p>
-            <p><b>Email:</b> codebysonu95@gmail.com</p>
-            <p><b>Response Time:</b> Within 24-48 Hours</p>
+            <p>For refund inquiries or payment issues, please contact us:</p>
+            <p><b>Email:</b> <a href="mailto:codebysonu95@gmail.com" style="color:var(--md-sys-color-primary); text-decoration:none;">codebysonu95@gmail.com</a></p>
+            <p><b>Developer:</b> Code by Sonu</p>
         </div>
     </section>
+
+    <div class="footer-nav">
+        <a href="index.html" class="footer-link">Download App</a>
+        <a href="condition.html" class="footer-link">Terms & Conditions</a>
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="mailto:codebysonu95@gmail.com" class="footer-link">Contact Us</a>
+    </div>
 
     <footer>
         © 2026 SketchCode | All Rights Reserved.
@@ -174,4 +227,3 @@
 
 </body>
 </html>
-
