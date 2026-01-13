@@ -38,7 +38,7 @@
         .header {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
             margin-bottom: 24px;
         }
 
@@ -48,14 +48,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 8px;
+            margin-left: -8px;
+            border-radius: 50%;
+            transition: background 0.3s;
         }
 
-        /* Fixed Icon Size & Rotation */
-        .arrow-icon {
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
-            transform: rotate(180deg);
+        .back-btn:hover {
+            background: var(--md-sys-color-surface-variant);
+        }
+
+        .material-icons-rounded {
+            font-size: 24px;
         }
 
         h1 {
@@ -108,7 +112,7 @@
 <div class="container">
     <div class="header">
         <a href="index.html" class="back-btn">
-            <img src="https://raw.githubusercontent.com/codebysonu95-rgb/SketchCode/a3182b383d7de58b4fef0e92a431f212b0034024/Website/errow_forward.png" class="arrow-icon" alt="back">
+            <span class="material-icons-rounded">arrow_back</span>
         </a>
         <h1>Privacy Policy</h1>
     </div>
