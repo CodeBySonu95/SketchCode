@@ -16,6 +16,7 @@
             --md-sys-color-on-surface-variant: #49454F;
             --md-sys-color-secondary-container: #E8DEF8;
             --telegram-color: #0088cc;
+            --link-color: #1a73e8; /* Blue for 'more' link */
         }
 
         body {
@@ -196,6 +197,37 @@
             line-height: 1.6;
         }
 
+        /* Read More Styles */
+        .more-content {
+            display: none;
+        }
+
+        .read-more-btn {
+            color: var(--link-color);
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .description-list {
+            margin: 10px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .description-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .bullet-icon {
+            font-size: 18px;
+            color: var(--md-sys-color-primary);
+            margin-top: 2px;
+        }
+
         /* Developer Contact Card */
         .dev-card {
             margin: 8px 0;
@@ -247,7 +279,7 @@
 
         .copyright {
             font-size: 11px;
-            color: var(--md-sys-color-outline);
+            color: var(--md-sys-color-on-surface-variant);
         }
     </style>
 </head>
@@ -307,12 +339,35 @@
     <div class="content-section">
         <div class="section-header">
             <h2>About this app</h2>
-            <span class="material-icons-outlined" style="color:var(--md-sys-color-primary);">arrow_forward</span>
+            <span class="material-icons-outlined" style="color:var(--md-sys-color-primary);" onclick="toggleDescription()">arrow_forward</span>
         </div>
-        <p class="about-text">
-            <b>SketchCode</b> is a premium platform designed for Sketchware Pro developers to share and explore high-quality projects and source codes. Our app features modern Material 3 UI components and seamless Firebase integrations. <br><br>
-            Whether you are a beginner or an expert, SketchCode simplifies your Android development journey. Download now and explore exclusive projects created by Code by Sonu.
-        </p>
+        <div class="about-text" id="descriptionContainer">
+            <span id="previewText">
+                <b>SketchCode | The Ultimate Project Store 🚀</b><br><br>
+                Welcome to SketchCode, the most user-friendly Project Store for mobile developers. Whether you are a beginner or a pro, SketchCode is designed to help you build amazing apps...
+            </span>
+            <span id="moreText" class="more-content">
+                without the hassle. Get instant access to premium source codes and UI designs, all in one place.<br><br>
+                
+                <b>Why Choose SketchCode?</b>
+                <ul class="description-list">
+                    <li><span class="material-icons-outlined bullet-icon">check_circle</span> 100% Free Access: No hidden charges. Download .swb projects and Java snippets for free.</li>
+                    <li><span class="material-icons-outlined bullet-icon">verified</span> High-Quality Only: Every project is hand-picked and tested in Sketchware Pro.</li>
+                    <li><span class="material-icons-outlined bullet-icon">touch_app</span> One-Click Download: No annoying ads or complicated links.</li>
+                    <li><span class="material-icons-outlined bullet-icon">devices</span> Built for Mobile: Optimized to work smoothly on Android—no PC required!</li>
+                </ul>
+
+                <b>What’s Inside?</b>
+                <ul class="description-list">
+                    <li><span class="material-icons-outlined bullet-icon">folder</span> Full .swb Projects: Complete app structures ready to import.</li>
+                    <li><span class="material-icons-outlined bullet-icon">code</span> Advanced Java Codes: Power up your logic with pro-level snippets.</li>
+                    <li><span class="material-icons-outlined bullet-icon">palette</span> Modern UI Templates: Beautiful, ready-to-use XML designs.</li>
+                    <li><span class="material-icons-outlined bullet-icon">update</span> Regular Updates: New high-quality projects added frequently!</li>
+                </ul>
+                Stop wasting time coding from scratch. Join the SketchCode community and start building faster today!
+            </span>
+            <div id="readMoreBtn" class="read-more-btn" onclick="toggleDescription()">more</div>
+        </div>
     </div>
 
     <div class="content-section">
@@ -354,6 +409,23 @@
 </div>
 
 <script>
+    // Description Toggle Function
+    function toggleDescription() {
+        const moreText = document.getElementById("moreText");
+        const btnText = document.getElementById("readMoreBtn");
+        const previewText = document.getElementById("previewText");
+
+        if (moreText.style.display === "inline" || moreText.style.display === "block") {
+            moreText.style.display = "none";
+            btnText.innerHTML = "more";
+            // Scroll back up to section if needed
+        } else {
+            moreText.style.display = "block";
+            btnText.innerHTML = "less";
+        }
+    }
+
+    // Share Functionality
     const shareBtn = document.getElementById('shareBtn');
     shareBtn.addEventListener('click', async () => {
         if (navigator.share) {
@@ -373,10 +445,24 @@
             el.select();
             document.execCommand('copy');
             document.body.removeChild(el);
-            alert('Link copied to clipboard!');
+            // Using a simple notification instead of alert
+            const toast = document.createElement('div');
+            toast.style.position = 'fixed';
+            toast.style.bottom = '20px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.background = '#333';
+            toast.style.color = '#fff';
+            toast.style.padding = '10px 20px';
+            toast.style.borderRadius = '50px';
+            toast.style.fontSize = '12px';
+            toast.innerHTML = 'Link copied to clipboard!';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
         }
     });
 </script>
 
 </body>
 </html>
+
